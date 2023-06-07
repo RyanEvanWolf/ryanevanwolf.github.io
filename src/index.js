@@ -1,8 +1,5 @@
 import {render,h, Component} from 'preact';
-import TopAppBar from 'preact-material-components/TopAppBar';
-import 'preact-material-components/TopAppBar/style.css';
-
-
+import {AppNavBar} from './components/Primary'
 
 class Clock extends Component {
 
@@ -51,19 +48,40 @@ class Counter extends Component {
 }
 
 function MyComponent(props) {
-  return <div>My name is {props.name}.
+  const yes = () => {console.log("Helloo")};
+  const x = [1,2,3,4,5,6,7,8,8];
+  let s ="";
+  x.forEach((value) => {s+= String(value)});
+
+
+  return <div>
+          <div>
+              My name is {props.name}.
           <Clock ></Clock>
           <Counter></Counter>
+          <h1 classname="bg-gradient-to-r from-green-400 to-blue-500 text-transparent text-9xl bg-clip-text font-extrabold"> hello world </h1>
+        </div>;
         </div>;
 }
 
 
-// Usage
-const App = <MyComponent name="John Doe" />;
+class MyC extends Component
+{
+  constructor(props) {
+    super(props);
+  }
+
+  render()  {
+    return <div>
+              <button class="btn btn-primary">Button</button>
+            </div>
+  }
+}
+
 
 
   
 window.onload = () => {
   console.log("ran");
-  render(App, document.body)
+  render(<AppNavBar/>, document.body)
 };

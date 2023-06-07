@@ -40,7 +40,7 @@ const path = require('path');
       },
       // css 
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           'style-loader',
           'css-loader',
