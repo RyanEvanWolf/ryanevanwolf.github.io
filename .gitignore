@@ -5,3 +5,4 @@ dist/
 archive/
 src___/
 tests/
+package-lock.json

@@ -76,12 +76,12 @@ export class HeroBanner extends Component
   }
 
   render()  {
-    return <div className="hero min-h-screen bg-base-200">
+    return <div className="hero min-h-screen bg-base-800">
       <div className="hero-content max-w-md flex flex-row">
     
 
         <div className="min-w-1/2 w-150 bg-blue-500">
-
+            dsgsdg
             ff
             </div>
         <div className="min-w-1/2 bg-red-500">

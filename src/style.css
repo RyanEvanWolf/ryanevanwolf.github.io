@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+    /* Define the animation */
+    @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+  
+      /* Apply animation properties */
+      .animated-fade-in {
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; /* Keep the final state after animation */
+        animation-play-state: paused; /* Initially paused */
+      }
+  
+      /* Play the animation on hover */
+      .animated-fade-in:hover {
+        animation-play-state: running; /* Play the animation on hover */
+      }

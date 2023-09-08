@@ -6,6 +6,13 @@ const path = require('path');
   entry: {
     index: './src/index.js'
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './dist'),
+    },
+    compress: true,
+    port: 9000,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -42,6 +49,7 @@ const path = require('path');
       // css 
       {
         test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
         use: [
           'style-loader',
           'css-loader',
