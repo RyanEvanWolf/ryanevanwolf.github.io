@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin"); 
 const path = require('path');
-
+const CopyPlugin = require("copy-webpack-plugin");
 
  module.exports = {
   entry: {
@@ -18,6 +18,16 @@ const path = require('path');
       filename: "index.html",
       template: "./src/index.html",
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/static/Careers", to: "Careers" },
+      ],
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/assets", to: "assets" },
+      ],
+    }),
     
   ],
   mode: "development",
@@ -32,7 +42,7 @@ const path = require('path');
     [
 
       {
-        test: /\.js$/i,
+        test: /\.(js|jsx)$/i,
         use: {
           loader: 'babel-loader',
           options: {

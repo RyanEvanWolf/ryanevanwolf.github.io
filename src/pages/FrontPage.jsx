@@ -10,6 +10,8 @@ function About(props) {
 
 
 
+
+
 export class FrontPage extends Component
 {
   constructor(props) {
@@ -21,7 +23,7 @@ export class FrontPage extends Component
     return <div class="flex flex-wrap flex-col animated-fade-in">
               <HeroBanner/>
               <About/>
-
+              <EmploymentHistory />
             </div>
     {/* <div class="sticky top-0">B</div>
     <div>
