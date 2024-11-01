@@ -20,7 +20,9 @@
     "babel-loader": "^9.1.2",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "json-loader": "^0.5.7",
     "postcss": "^8.4.24",
     "postcss-loader": "^7.3.2",
     "postcss-preset-env": "^8.4.2",
@@ -36,6 +38,7 @@
     "@egjs/preact-flicking": "^4.11.2",
     "daisyui": "^3.5.1",
     "live-server": "^1.1.0",
-    "opencv.js": "^1.2.1"
+    "opencv.js": "^1.2.1",
+    "raw-loader": "^4.0.2"
   }
 }

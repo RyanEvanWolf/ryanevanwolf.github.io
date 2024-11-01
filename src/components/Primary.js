@@ -26,18 +26,6 @@ const random = {
 
 
 
-const test ={
-    "title"       :"Junior Engineer",
-    "company"     :"Reutech Radar Systems",
-    "description" :"I worked there",
-    "start"       : "Jan",
-    "end"         :"Feb",
-    "tags"        :["Python","C++"]
-};
-
-
-
-
 
 
 export function TechBadge({tag})

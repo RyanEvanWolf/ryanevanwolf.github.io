@@ -1,23 +1,6 @@
 import {h,Fragment, Component} from 'preact';
-import {TechBadge} from '../components/Primary.js'
-
-async function fetch_my_stuff(job)
-{
-  return fetch(window.location.origin+"/dist/Careers/" +job )
-  .then((response)=>{
-    return response.json();
-  })
-  .then( json => {
-    return json;
-  })
-  .catch((e)=>{
-    console.log(e);
-    return false;
-  })
-
-}
-
-
+import {TechBadge} from '../components/Primary.js';
+import CareersData from '../static/Careers.json';
 
 function CVTimeline()
 {
@@ -54,41 +37,19 @@ export class CV extends Component
 
 
 
-  async componentDidMount()
-  {
-    // const careers = ["RRS_Junior.json","RRS_Electronic.json"];
-
-    const results = await Promise.all([await fetch_my_stuff("RRS_Junior.json"),
-                                      await fetch_my_stuff("RRS_Electrofnic.json"),
-                                       await fetch_my_stuff("RRS_Electronic.json")])
-    results.map(career => {
-      
-      if(career && career.title)
-      {
-        const key= career.title;
-        const a =this.state;
-        a[key]=career
-        this.setState(a);
-      }
-      else 
-      {
-        console.log("failed to get");
-      }
-    });
-  }
 
   render(props,state)
   { 
-    console.log(state);
-    return <><div className=" carousel w-full">
-              { Object.keys(state).map((info)=>{
+    return <><div className="carousel w-full">
+              { 
+              
+              Object(CareersData.list).map(info=>{
                 return <div className="carousel-item h-full flex flex-col gap-2 rounded-xl shadow-md outline-1 stroke-slate-950 p-2">{
-                              <span>{state[info].title}</span>}
-                              <span>{state[info]}</span>
+                              <span>{info.title}</span>}
                               <hr/>
                               <div className="w-full">
                                 {
-                                  state[info].tags.map(tag => {return <TechBadge tag={tag} />;})
+                                  info.tags.map(tag => {return <TechBadge tag={tag} />;})
                                 }
                               </div>
                         </div>})}

@@ -1,6 +1,34 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin"); 
-const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
+
+const fs   = require('fs');
+const path = require('path');
+// 
+
+
+// Take all the json files for the careers section,
+// and merge them into one file for easy importing
+const CareersInDir = "configs/Careers";
+const CareersList = fs.readdirSync(CareersInDir).filter(file => path.extname(file) === '.json');
+
+
+var vlist= [];
+
+
+CareersList.forEach(file => {
+  console.log(file)
+  const fileData = fs.readFileSync(path.join(CareersInDir, file));
+  const json = JSON.parse(fileData);
+  vlist.push(json)
+});
+
+
+fs.writeFileSync("src/static/Careers.json",JSON.stringify({list:vlist}));
+
+
+
+
+
 
  module.exports = {
   entry: {
@@ -20,11 +48,6 @@ const CopyPlugin = require("copy-webpack-plugin");
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/static/Careers", to: "Careers" },
-      ],
-    }),
-    new CopyPlugin({
-      patterns: [
         { from: "src/assets", to: "assets" },
       ],
     }),
@@ -40,7 +63,6 @@ const CopyPlugin = require("copy-webpack-plugin");
    module: {
     rules: 
     [
-
       {
         test: /\.(js|jsx)$/i,
         use: {

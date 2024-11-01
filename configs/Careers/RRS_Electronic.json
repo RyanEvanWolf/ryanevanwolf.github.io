@@ -1,0 +1,8 @@
+{
+    "title"       :"Electronic Engineer",
+    "company"     :"Reutech Radar Systems",
+    "description" :"This role has been to ensure that requisite design activities are executed in the support of projects. My core tasks involve assisting in the generation of schematic and component libraries in Altium Designer along with some circuit board layout and routing.additionally perform system, hardware, and firmware development on a variety of interfaces and protocol translators primarily on ARM based microcontrollers.",
+    "start"       : "Jan",
+    "end"         :"Feb",
+    "tags"        :["Python","C++","Altium"]
+}
